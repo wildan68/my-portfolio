@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        WLDNRZKY Portofolio
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/jpg" href="img/logo_purple.png" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+</head>
+<script>
+    AOS.init();
+</script>
+
+<body>
+    <div class="header">
+        <span class="logo"><img src="img/logo.png" width="110px"></span>
+        <div class="nav-menu">
+            <div class="toggle-nav">
+                <button class="btn-menu" onclick="menu()"><i class="fi fi-rr-apps" style="color: var(--ungu);"></i></button>
+            </div>
+            <div class="bg-menu" id="bg-menu"></div>
+            <div class="mobile-menu" id="mobile-menu">
+                <ul>
+                    <li class="list-menu">
+                        <a href="#home" id="link-menu">Home</a>
+                    </li>
+                    <li class="list-menu">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="list-menu">
+                        <a href="#skills">Skills</a>
+                    </li>
+                    <li class="list-menu">
+                        <a href="#service">Services</a>
+                    </li>
+                    <li class="list-menu">
+                        <a href="#portofolio">Portofolio</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        AOS.init();
+        document.querySelector('#bg-menu', '#link-menu').addEventListener('click', () => {
+            document.getElementById("mobile-menu").style.animation = "menuClose 1s ease";
+            var set = setInterval(close, 500);
+
+            function close() {
+                document.getElementById("mobile-menu").style.display = "none";
+                document.getElementById("bg-menu").style.display = "none";
+                clearInterval(set);
+            }
+        });
+
+        function menu() {
+            document.getElementById("bg-menu").style.display = "flex";
+            document.getElementById("mobile-menu").style.display = "flex";
+            document.getElementById("mobile-menu").style.animation = "menuShow 1s ease"
+        }
+    </script>

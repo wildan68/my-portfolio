@@ -1,0 +1,78 @@
+<div class="service" id="service">
+    <div class="content">
+        <div class="left">
+            <div class="title">Services</div>
+            <div class="subTitle">What i offer</div>
+            <div data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine">
+                <hr />
+            </div>
+            <div class="box-service" data-aos="flip-left">
+                <div class="box-service-menu">
+                    <div class="box-service-menu-1" id="btn-service-designer">
+                        UI / UX<br>Designer
+                    </div>
+                    <div class="box-service-menu-2" id="btn-service-frontend">
+                        Fronted<br>Developer
+                    </div>
+                </div>
+                <div class="box-service-content">
+                    <div id="service-designer">
+                        <div class="box-service-title">
+                            <i class="fi fi-rr-brush" style="margin-right: 10px;"></i> UI / UX Designer
+                        </div>
+                        <br>
+                        <span class="box-service-caption">
+                        <i class="fi fi-rr-checkbox" style="margin-right: 10px;"> </i><i>I develop the user interfaces</i><br></span>
+                        <span class="box-service-caption">
+                        <i class="fi fi-rr-checkbox" style="margin-right: 10px;"> </i><i>Web page development</i><br></span>
+                        <span class="box-service-caption">
+                        <i class="fi fi-rr-checkbox" style="margin-right: 10px;"> </i><i>I create element interactions</i><br> </span>
+                        <span class="box-service-caption">
+                        <i class="fi fi-rr-checkbox" style="margin-right: 10px;"> </i><i>I develop mobile app interface</i><br></span>
+                    </div>
+                    <div id="service-frontend">
+                        <div class="box-service-title">
+                            <i class="fi fi-rr-computer" style="margin-right: 10px;"></i> Frontend Developer
+                        </div>
+                        <br>
+                        <span class="box-service-caption">
+                        <i class="fi fi-rr-checkbox" style="margin-right: 10px;"> </i><i>I build a website</i><br></span>
+                        <span class="box-service-caption">
+                        <i class="fi fi-rr-checkbox" style="margin-right: 10px;"> </i><i>Wordpress web development</i><br></span>
+                        <span class="box-service-caption">
+                        <i class="fi fi-rr-checkbox" style="margin-right: 10px;"> </i><i>HTML, PHP, CSS and JavaScript</i><br> </span>
+                        <span class="box-service-caption">
+                        <i class="fi fi-rr-checkbox" style="margin-right: 10px;"> </i><i> I develop interface website</i><br></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <img src="img/web-service.png" width="70%" /><br>
+            <span class="caption" style="margin-left: -40%; margin-top: -4%;">Interested</span>
+            <br><span class="caption" style="margin-top: -10%;">Collaborating?</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('#btn-service-frontend').addEventListener('click', () => {
+        document.getElementById("service-frontend").style.display = "block";
+        document.getElementById("service-frontend").style.animation = "show-up 1s ease";
+        document.getElementById("service-designer").style.display = "none";
+        document.getElementById("btn-service-frontend").style.backgroundColor = "var(--black-deep)";
+        document.getElementById("btn-service-frontend").style.color = "var(--green)";
+        document.getElementById("btn-service-designer").style.backgroundColor = "var(--black-deep-light)";
+        document.getElementById("btn-service-designer").style.color = "var(--black)";
+    });
+
+    document.querySelector('#btn-service-designer').addEventListener('click', () => {
+        document.getElementById("service-frontend").style.display = "none";
+        document.getElementById("service-designer").style.display = "block";
+        document.getElementById("service-designer").style.animation = "show-up 1s ease";
+        document.getElementById("btn-service-designer").style.backgroundColor = "var(--black-deep)";
+        document.getElementById("btn-service-designer").style.color = "var(--green)";
+        document.getElementById("btn-service-frontend").style.backgroundColor = "var(--black-deep-light)";
+        document.getElementById("btn-service-frontend").style.color = "var(--black)";
+    });
+</script>

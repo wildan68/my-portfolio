@@ -1,0 +1,141 @@
+<div class="home" id="home">
+    <div class="overlay">
+        <div class="content">
+            <div class="left">
+                <div class="title">Hi, I'am Wildan Rizky</div>
+                <div class="subTitle">Frontend Developer</div><br>
+                <div class="bio">Medium level experience in<br> web design and development<br> knowledge producing quality work</div>
+                <br>
+                <button class="btn-contact" onclick="popupcontact()">Contact Me <i class="fi fi-rr-paper-plane"></i></button>
+                <div class="popup" id="popup-contact">
+                    <div class="popup-box-bg"></div>
+                    <div class="popup-box" id="popup-box-contact">
+                        <div class="title-box">Contact Me <i class="fi fi-rr-cross close" id="close"></i></div><br>
+                        <div class="box-line"></div>
+                        <br>
+                        <div class="popup-box-flex">
+                            <div class="popup-left">
+                                <a href="http://facebook.com/wildannaxviking12" target="_blank">
+                                    <button class="btn-fb"><img src="img/ico/fb-ico.svg" style="margin-right: 10px;"/> Facebook</button>
+                                </a>
+                                <br>
+                                <a href="http://instagram.com/wldan.rzky_" target="_blank">
+                                    <button class="btn-ig"><img src="img/ico/ig-ico.svg" style="margin-right: 10px;"/> Instagram</button>
+                                </a>
+                                <br>
+                                <a href="https://wa.me/6281326592234" target="_blank">
+                                    <button class="btn-wa"><img src="img/ico/wa-ico.svg" style="margin-right: 10px;"/> WhatsApp</button>
+                                </a>
+                                <br>
+                                <a href="mailto:wildanrizkiyadi68@gmail.com" target="_blank">
+                                    <button class="btn-mail"><img src="img/ico/mail-ico.svg" style="margin-right: 10px;"/> E-mail</button>
+                                </a>
+                                <br>
+                            </div>
+                            <div class="popup-right">
+                                Send a message for me<br><br>
+                                <div style="display: flex;">
+                                    <div class="field" style="margin-right: 10px;">
+                                        <input type="text" required autocomplete="off" id="name" value="">
+                                        <label for="name" title="Name" data-title="Name"></label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" required autocomplete="off" id="project" value="">
+                                        <label for="project" title="Project" data-title="Project"></label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <input type="text" required autocomplete="off" id="email" value="">
+                                    <label for="email" title="E-Mail" data-title="E-Mail"></label>
+                                </div>
+                                <div class="field">
+                                    <textarea required autocomplete="off" id="message" value="" style="height: 100px;"></textarea>
+                                    <label for="message" title="Message" data-title="Message"></label>
+                                </div>
+                                <button class="btn-send"><i class="fi fi-rr-paper-plane" style="margin-right: 10px;"></i> Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="slider">
+                    <div class="frame">
+                        <img src="img/frame.png" style="width: 100%;position: relative; border-radius: 12px;" />
+                        <br> Nice to meet you<br>
+                        <div class="line"></div>
+                        <br> <span style="color:rgb(184, 184, 184); text-align: left; font-weight: 400;">This is my web portfolio, enjoy explore</span>
+                    </div>
+                    <div class="frame">
+                        <img src="img/frame.png" style="width: 100%;position: relative; border-radius: 12px;" />
+                        <br> Nice to meet you 2<br>
+                        <div class="line"></div>
+                        <br> <span style="color:rgb(184, 184, 184); text-align: left; font-weight: 400;">This is my web portfolio, please explore</span>
+                    </div>
+                    <div class="frame">
+                        <img src="img/frame.png" style="width: 100%;position: relative; border-radius: 12px;" />
+                        <br> Nice to meet you 3<br>
+                        <div class="line"></div>
+                        <br> <span style="color:rgb(184, 184, 184); text-align: left; font-weight: 400;">This is my web portfolio, please explore</span>
+                    </div>
+                    <div class="frame">
+                        <img src="img/frame.png" style="width: 100%;position: relative; border-radius: 12px;" />
+                        <br> Nice to meet you 4<br>
+                        <div class="line"></div>
+                        <br> <span style="color:rgb(184, 184, 184); text-align: left; font-weight: 400;">This is my web portfolio, please explore</span>
+                    </div>
+                    <div class="slider-paging">
+                        <button class="btn btn-slide-active" onclick="currentDiv(1)"></button>
+                        <button class="btn btn-slide" onclick="currentDiv(2)"></button>
+                        <button class="btn btn-slide" onclick="currentDiv(3)"></button>
+                        <button class="btn btn-slide" onclick="currentDiv(4)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("frame");
+        var dots = document.getElementsByClassName("btn");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" btn-slide-active", " btn-slide");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " btn-slide-active";
+
+    }
+
+    document.querySelector('#close').addEventListener('click', () => {
+        document.getElementById("popup-box-contact").style.animation = "popup-animate-close 0.5s ease";
+        var set = setInterval(close, 400);
+
+        function close() {
+            document.getElementById("popup-contact").style.display = "none";
+            clearInterval(set);
+        }
+    });
+
+    function popupcontact() {
+        document.getElementById("popup-contact").style.display = "flex";
+        document.getElementById("popup-box-contact").style.animation = "popup-animate-show 0.5s ease"
+    }
+</script>
